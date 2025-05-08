@@ -41,7 +41,7 @@
 ~~~Example:
 type A = string | number;
 const square(a: A)=>{
-    return a*a;
+    return `${a}`;
 }
 console.log(square(5));
 ~~~
