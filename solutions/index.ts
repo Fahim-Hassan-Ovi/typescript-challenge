@@ -1,5 +1,5 @@
 {
-    // Problem 1
+ 
     function formatString(input: string, toUpper?: boolean): string {
         if (toUpper === true) {
             return input.toUpperCase();
@@ -12,27 +12,20 @@
         }
     }
 
-    // console.log(formatString("Hello"));
-    // console.log(formatString("Hello", true));   
-    // console.log(formatString("Hello", false));  
-
-
-    // problem 2
+    
     function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[] {
-        const filterItem = items.filter(item => item.rating >= 4);
-        return filterItem;
+        const filterResult = items.filter(item => item.rating >= 4);
+        return filterResult;
     }
 
-    const books = [
-        { title: "Book A", rating: 4.5 },
-        { title: "Book B", rating: 3.2 },
-        { title: "Book C", rating: 5.0 }
-    ];
 
-    // filterByRating(books);
-    // console.log(filterByRating(books));
+    function concatenateArrays<T>(...arrays: T[][]): T[] {
+        const expectedArray: T[] = [];
+        arrays.forEach(array => expectedArray.push(...array));
+        return expectedArray;
+    }
 
-    // problem 4
+    
     class Vehicle {
         private make: string;
         private year: number;
@@ -59,12 +52,7 @@
         }
     }
 
-    // const myCar = new Car("Toyota", 2020, "Corolla");
-    // myCar.getInfo(); 
-    // myCar.getModel(); 
 
-
-    // problem 5
     function processValue(value: string | number): number {
         if (typeof value === 'string') {
             return value.length;
@@ -74,11 +62,7 @@
         }
     }
 
-    // console.log(processValue("hello")); 
-    // console.log(processValue(10)); 
-
-
-    // problem 6
+    
     interface Product {
         name: string;
         price: number;
@@ -97,16 +81,7 @@
         }
     }
 
-    const products = [
-        { name: "Pen", price: 10 },
-        { name: "Notebook", price: 25 },
-        { name: "Bag", price: 50 }
-    ];
-
-    // console.log(getMostExpensiveProduct(products));
-
-
-    // problem 7
+    
     enum Day {
         Monday,
         Tuesday,
@@ -119,18 +94,14 @@
 
     function getDayType(day: Day): string {
         if (day === Day.Saturday || day === Day.Sunday) {
-            return 'Weekend'
+            return 'Weekend';
         }
         else {
-            return 'Weekday'
+            return 'Weekday';
         }
     }
 
-    console.log(getDayType(Day.Monday));  // Output: "Weekday"
-    console.log(getDayType(Day.Sunday));  // Output: "Weekend"
-
-
-    // Problem 8
+    
     async function squareAsync(n: number): Promise<number> {
         return new Promise((resolve, reject) => {
             if (n >= 0) {
@@ -143,7 +114,5 @@
             }
         })
     }
-
-    // squareAsync(4).then(console.log); 
-    // squareAsync(-3).catch(console.error);    
+ 
 }
